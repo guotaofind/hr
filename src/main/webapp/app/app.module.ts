@@ -29,8 +29,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         HrCoreModule,
         HrHomeModule,
         HrAccountModule,
-        // jhipster-needle-angular-add-module JHipster will add new module here
         HrEntityModule
+        // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [

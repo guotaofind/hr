@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="department">
+            <h2><span jhiTranslate="hrApp.serviceDepartment.detail.title">Department</span> {{department.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hrApp.serviceDepartment.name">Name</span></dt>
+                <dd>
+                    <span>{{department.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceDepartment.numberOfEmployee">Number Of Employee</span></dt>
+                <dd>
+                    <span>{{department.numberOfEmployee}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/department', department.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

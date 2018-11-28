@@ -2,9 +2,10 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.motic",
-      "nativeLanguage": "zh-cn"
+      "nativeLanguage": "zh-cn",
+      "microservicePath": "../service"
     },
-    "jhipsterVersion": "5.5.0",
+    "jhipsterVersion": "5.4.2",
     "applicationType": "gateway",
     "baseName": "hr",
     "packageName": "com.motic",

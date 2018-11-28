@@ -8,7 +8,7 @@ import { IUser } from './user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    public resourceUrl = SERVER_API_URL + 'uaa/api/users';
+    private resourceUrl = SERVER_API_URL + 'uaa/api/users';
 
     constructor(private http: HttpClient) {}
 

@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employee">
+            <h2><span jhiTranslate="hrApp.serviceEmployee.detail.title">Employee</span> {{employee.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="hrApp.serviceEmployee.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{employee.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{employee.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.email">Email</span></dt>
+                <dd>
+                    <span>{{employee.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{employee.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{employee.hireDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.salary">Salary</span></dt>
+                <dd>
+                    <span>{{employee.salary}}</span>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.manager">Manager</span></dt>
+                <dd>
+                    <div *ngIf="employee.manager">
+                        <a [routerLink]="['/employee', employee.manager?.id, 'view']">{{employee.manager?.lastName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="hrApp.serviceEmployee.department">Department</span></dt>
+                <dd>
+                    <div *ngIf="employee.department">
+                        <a [routerLink]="['/department', employee.department?.id, 'view']">{{employee.department?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employee', employee.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
